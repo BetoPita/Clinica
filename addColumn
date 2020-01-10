@@ -1,0 +1,16 @@
+'use strict';
+
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.addColumn(
+      "clientes",
+      'am', Sequelize.STRING(300)
+    )
+  },
+
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.removeColumn("clientes",
+      'am'
+    );
+  }
+};

@@ -14,8 +14,24 @@ module.exports = {
         allowNull:false
     },
     clienteId: Sequelize.INTEGER(11),
-      createdAt: Sequelize.DATE,
-      updatedAt: Sequelize.DATE,
+    diabetes:{
+        type:Sequelize.STRING(300),
+        allowNull:false
+    },
+    cancer:{
+        type:Sequelize.STRING(300),
+        allowNull:false
+    },
+    hta:{
+        type:Sequelize.STRING(300),
+        allowNull:false
+    },
+    cardiacos:{
+        type:Sequelize.STRING(300),
+        allowNull:false
+    },
+    createdAt: Sequelize.DATE,
+    updatedAt: Sequelize.DATE,
     
     });
   },

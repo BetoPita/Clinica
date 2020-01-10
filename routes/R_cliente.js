@@ -43,7 +43,7 @@ app.post('/cliente', urlencodedParser, function (req, res) {
     }).catch((err)=>{
         return res.status(401).json({
             ok:false,
-            message:"Error al guardar"
+            message:"Error al guardar: "+err
         })
     })
     
