@@ -1,4 +1,5 @@
 //https://www.youtube.com/watch?v=VDgXAw7VynQ
+//https://www.youtube.com/watch?v=pxo7L5nd1gA&t=2110s
 const Cliente = require('../src/models/Clientes');
 const Antecedentes = require('../src/models/Antecedentes_familiares');
 
@@ -65,7 +66,6 @@ const getAll = () =>{
 const getById = async(id)=>{
     return new Promise((resolve,reject)=>{
         Cliente.findByPk(id).then(cliente => {
-            console.log("Cliente",cliente);
             if(cliente==null){
                 reject({
                     exito:false,
@@ -80,10 +80,6 @@ const getById = async(id)=>{
         });
         
     });
-    
-    
-
-    
 } 
 
 module. exports = {

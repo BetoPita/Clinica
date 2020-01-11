@@ -23,8 +23,8 @@ app.use(express.static(rootPath));
 //DB CONECTION
 require("./src/database/connection");
 
-
-app.use(require('./routes/R_cliente'));
+//Configuración global de rutas
+app.use(require('./routes/index'));
 
 router.use((err,req,res,next)=>{
     if(err){
