@@ -17,7 +17,8 @@ module.exports = global.sequelize.define('usuarios',{
     },
     email:{
         type:Sequelize.STRING(200),
-        allowNull:false
+        allowNull:false,
+        unique:true
     },
     password:{
         type:Sequelize.STRING(200),

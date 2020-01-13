@@ -13,10 +13,12 @@ const saveUser = async(body) =>{
         perfilId:body.perfilId,
     })
     .catch(errHandler)
+
+    return UsuarioDB;
 }
 
 const getAll = async() =>{
-    Usuario.findAll({raw:true});
+    return Usuario.findAll({raw:true});
 }
 
 

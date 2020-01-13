@@ -7,12 +7,11 @@ var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 //Obtiene todos los usuarios
-//const{verificaToken} = require('../src/middleware/autenticacion')
-app.get('/usuarios',function(req, res, next) {
+const{verificaToken} = require('../src/middleware/autenticacion')
+app.get('/usuarios',verificaToken,function(req, res, next) {
     
     cusuarios.getAll()
     .then(function(users){
-        console.log(users);
         res.json(users);
     })
     .catch(()=>{
@@ -20,7 +19,7 @@ app.get('/usuarios',function(req, res, next) {
     })
 });
 
-app.get('/usuario/:id', function(req, res, next) {
+app.get('/usuario/:id',verificaToken,function(req, res, next) {
     let id = req.params.id;
     ccliente.getById(id)
     .then((usuario)=>{
@@ -31,7 +30,7 @@ app.get('/usuario/:id', function(req, res, next) {
     })
 });
 
-app.post('/usuario', urlencodedParser, function (req, res) {
+app.post('/usuario', [verificaToken,urlencodedParser], function (req, res) {
     let body = req.body;
     cusuarios.saveUser(body)
     .then((response)=>{

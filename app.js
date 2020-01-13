@@ -1,6 +1,7 @@
 const express = require('express');
 let app = express();
 
+require('./config/variables/config');
 //Puerto
 process.env.PORT = process.env.PORT || 4000;
 

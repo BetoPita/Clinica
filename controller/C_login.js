@@ -18,8 +18,8 @@ const getLogin = async (email,password) =>{
             }
             let token = jwt.sign({
                 usuario_logueado
-            },'SEMILLA',{
-                expiresIn: 60*30*30*30
+            },process.env.SEED,{
+                expiresIn: process.env.CADUCIDAD_TOKEN
             })
             return {
                 exito:true,
